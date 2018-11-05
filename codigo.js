@@ -6,6 +6,8 @@ var tiempoJugado=[];
 var totalCanastaDos=0;
 var totalCanastaTres=0;
 var totalTiempoJugado=0;
+var totalAnotado=0;
+var maxAnotador="";
 function contenido(){
 while (nombre != "salir") {
     numero=numero+1;
@@ -18,7 +20,12 @@ while (nombre != "salir") {
       tiempoJugado=Number(prompt(`Escribe el tiempo jugado del jugador numero ${numero} en minutos`));
       totalTiempoJugado+=tiempoJugado;
       }
+      if (totalAnotado<canastaDos+canastaTres) {
+        maxAnotador=nombre;
+        totalAnotado=canastaDos+canastaTres;
+      }
     }
+      console.log(`El maximo anotador es ${maxAnotador} con ${totalAnotado} canastas.`);
 }
 contenido();
 var numeroJugadores=numero-1;
