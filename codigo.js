@@ -8,21 +8,29 @@ var totalCanastaTres=0;
 var totalTiempoJugado=0;
 var totalAnotado=0;
 var maxAnotador="";
+var nombre1="";
+var canastas2="";
+var canastas3="";
+var tiempoJugado1="";
 function contenido(){
-while (nombre != "salir") {
+while (nombre1 != "salir") {
     numero=numero+1;
-    nombre=prompt(`Escribe el nombre del corredor ${numero}`);
-    if (nombre != "salir") {
-      canastaDos=Number(prompt(`Escribe las canastas de dos del jugador numero ${numero}`));
-      totalCanastaDos+=canastaDos;
-      canastaTres=Number(prompt(`Escribe las canastas de tres del jugador numero ${numero}`));
-      totalCanastaTres+=canastaTres;
-      tiempoJugado=Number(prompt(`Escribe el tiempo jugado del jugador numero ${numero} en minutos`));
-      totalTiempoJugado+=tiempoJugado;
+    nombre1=prompt(`Escribe el nombre del corredor ${numero}`);
+    nombre.push(nombre1);
+    if (nombre1 != "salir") {
+      canastas2=Number(prompt(`Escribe las canastas de dos del jugador numero ${numero}`));
+      canastaDos.push(canastas2);
+      totalCanastaDos+=canastas2;
+      canastas3=Number(prompt(`Escribe las canastas de tres del jugador numero ${numero}`));
+      canastaTres.push(canastas3);
+      totalCanastaTres+=canastas3;
+      tiempoJugado1=Number(prompt(`Escribe el tiempo jugado del jugador numero ${numero} en minutos`));
+      tiempoJugado.push(tiempoJugado1);
+      totalTiempoJugado+=tiempoJugado1;
       }
-      if (totalAnotado<canastaDos+canastaTres) {
-        maxAnotador=nombre;
-        totalAnotado=canastaDos+canastaTres;
+      if (totalAnotado<canastas2+canastas3) {
+        maxAnotador=nombre1;
+        totalAnotado=canastas2+canastas3;
       }
     }
       console.log(`El maximo anotador es ${maxAnotador} con ${totalAnotado} canastas.`);
